@@ -115,7 +115,7 @@ namespace HomeWork2
                 number = SupportMethods.RequestIntValue("Please input any number, 0 - exit: ");
 
                 //If number is Odd and number is Positive then sum increase by number
-                if (number % 2 == 1 && number > 0)
+                if (number % 2 == 1)
                 { sum += number; }                
 
             } while (number != 0);
@@ -336,11 +336,9 @@ namespace HomeWork2
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
-        {
-            bool authentication = false;
-
+        {            
             //trying to authenticate person
-            if (authentication = SupportMethods.RequestUsernamePassword("root", "GeekBrains"))
+            if (SupportMethods.RequestUsernamePassword("root", "GeekBrains"))
             {
                 Start();
             } else
