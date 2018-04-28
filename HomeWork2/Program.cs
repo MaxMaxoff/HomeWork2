@@ -140,7 +140,8 @@ namespace HomeWork2
                 "Используя метод проверки логина и пароля, написать программу: пользователь вводит логин и пароль, программа пропускает его дальше или не пропускает.\n" +
                 "С помощью цикла do while ограничить ввод пароля тремя попытками.");
 
-            bool up = SupportMethods.RequestUsernamePassword("root", "GeekBrains");
+            int maxattempts = 3;
+            bool up = SupportMethods.RequestUsernamePassword("root", "GeekBrains", maxattempts);
 
             //Output result of work using SupportMethods.Pause
             SupportMethods.Pause(up ? "Аутентификация успешна!" : "Аутентификация не выполнена!");
@@ -336,9 +337,10 @@ namespace HomeWork2
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
-        {            
+        {
+            int maxattempts = 3;
             //trying to authenticate person
-            if (SupportMethods.RequestUsernamePassword("root", "GeekBrains"))
+            if (SupportMethods.RequestUsernamePassword("root", "GeekBrains", maxattempts))
             {
                 Start();
             } else
